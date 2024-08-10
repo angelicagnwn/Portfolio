@@ -1,0 +1,362 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-y: auto; /* Enable vertical scroll */
+}
+
+.container {
+    margin-left: 12%; /* Space for the fixed navbar */
+    width: 88%; /* Adjust width to fit the remaining space */
+    min-height: 100vh; /* Full viewport height, allowing scrolling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    object-fit: cover; /* Ensures the background covers the container */
+    transform: translateX(0px) translateY(0px);
+    z-index: -1;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh; /* Full viewport height */
+    width: 12%;
+    background-color: #b73e4c; /* Pink background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 100; /* Ensure it stays on top */
+    overflow-y: auto; /* Allow vertical scrolling if content exceeds height */
+}
+
+.navbar .logo img {
+    width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.navbar .nav-buttons {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.navbar .nav-buttons li {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-left: 45px;
+}
+
+.navbar .nav-buttons li a img {
+    width: 80%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.navbar .nav-buttons li a img:hover {
+    transform: scale(1.1);
+}
+
+/* Button Styles */
+.button {
+    position: relative;
+}
+
+.button img {
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.button:hover img {
+    transform: scale(1.1);
+}
+
+/*---------------------------------- Specific Button Styles -------------------------------*/
+.grass {
+    position: absolute;
+    width: 85%;
+    height: auto;
+    transform: translateX(0%) translateY(3500px);
+    z-index: 1;
+}
+
+.grasshouse {
+    position: absolute;
+    width: 28%;
+    height: auto;
+    transform: translateX(-75%) translateY(90%);
+    z-index: -1;
+}
+
+/* House */
+.house, .house-hover {
+    position: absolute;
+    width: 200%;
+    height: auto;
+    transform: translateX(-150%) translateY(30%);
+    z-index: 3;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.house-hover {
+    opacity: 0; /* Hidden by default */
+}
+
+.button .house {
+    opacity: 1; /* Fully visible by default */
+}
+
+.button:hover .house-hover {
+    opacity: 1; /* Show hover image on hover */
+    transform: scale(1.1);
+}
+
+.button:hover .house {
+    opacity: 0; /* Hide normal image on hover */
+}
+
+/* Park */
+.park {
+    position: absolute;
+    width: 25%;
+    height: auto;
+    transform: translateX(-130%) translateY(-85%);
+    z-index: 1;
+}
+
+/* Pavement */
+.pavement1 {
+    position: absolute;
+    width: 28%;
+    height: auto;
+    transform: translateX(108%) translateY(130%);
+    z-index: -1;
+}
+
+/* Projects */
+.projects, .projects-hover {
+    position: absolute;
+    width: 20%;
+    height: auto;
+    transform: translateX(102%) translateY(10%);
+    z-index: 3;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.projects-hover {
+    opacity: 0; /* Hidden by default */
+}
+
+.button:hover .projects-hover {
+    opacity: 1; /* Show hover image on hover */
+    transform: scale(1.1);
+}
+
+.button:hover .projects {
+    opacity: 0; /* Hide normal image on hover */
+}
+
+/* Pavement 2 */
+.pavement2 {
+    position: absolute;
+    width: 26%;
+    height: auto;
+    transform: translateX(116%) translateY(-18%);
+    z-index: 1;
+}
+
+/* Arcade */
+.arcade, .arcade-hover {
+    position: absolute;
+    width: 24%;
+    height: auto;
+    transform: translateX(77%) translateY(-85%);
+    z-index: 2;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.arcade-hover {
+    opacity: 0; /* Hidden by default */
+}
+
+.button:hover .arcade-hover {
+    opacity: 1; /* Show hover image on hover */
+    transform: scale(1.1);
+}
+
+.button:hover .arcade {
+    opacity: 0; /* Hide normal image on hover */
+}
+
+/* Fountain */
+.fountain {
+    position: absolute;
+    width: 18%;
+    height: auto;
+    transform: translateX(-15%) translateY(-25%);
+    transition: transform 0.3s ease;
+}
+
+.button:hover .fountain {
+    transform: scale(1.1);
+}
+
+/* Board */
+.board, .board-hover {
+    position: absolute;
+    width: 9%;
+    height: auto;
+    transform: translateX(-345%) translateY(-80%);
+    z-index: 4;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.board-hover {
+    opacity: 0; /* Hidden by default */
+}
+
+.button:hover .board-hover {
+    opacity: 1; /* Show hover image on hover */
+    transform: scale(1.1);
+}
+
+.button:hover .board {
+    opacity: 0; /* Hide normal image on hover */
+}
+
+/* Responsive Design for Desktop*/
+@media (min-width: 769px) {
+    .button {
+        width: 2000%; /* Default width for buttons on desktop */
+        height: auto;
+        /*margin: 10px;*/
+    }
+
+    /* Adjust House Button */
+.house, .house-hover {
+    width: 160%; /* Make this button larger */
+}
+
+/* Adjust Projects Button */
+.projects, .projects-hover {
+    width: 160%; /* Make this button larger */
+}
+
+/* Adjust Arcade Button */
+.arcade, .arcade-hover {
+    width: 160%; /* Make this button larger */
+    transform: 
+}
+
+/* Adjust Board Button */
+.board, .board-hover {
+    width: 70%; /* Make this button larger */
+}
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .navbar {
+        width: 100%;
+        height: 85px;
+        flex-direction: row;
+        padding: 10px 0;
+    }
+
+    .navbar .logo img {
+        width: 50px;
+        margin-top: 40px;
+        margin-bottom: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .navbar .nav-buttons {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .navbar .nav-buttons li {
+        margin-top: 40px;
+        margin-bottom: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+        width: 60px;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #yourColorHere; /* This will be the color that matches the bottom of the PNG */
+        background-image: url('png/website-homepage-bg.png');
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: contain; /* Ensures the image fits the width */
+        min-height: 100vh; /* Ensures the page covers the full height of the viewport */
+    }
+    
+    /* Additional styles for the container */
+    .container {
+        min-height: 100vh; /* Ensures the container covers the full height */
+        padding-top: 30%; /* Adjust based on the height of your PNG */
+    }
+
+    .container {
+        margin-left: 0;
+        width: 100%
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto;
+        padding-top: 100px; /* Adjust padding to avoid overlap with navbar */
+    }
+
+    /* Remove or adjust absolute positioning for mobile */
+    .grasshouse, .pavement1, .pavement2, .background {
+        width: 100%;
+        height: auto;
+        position: relative; /* Ensure elements are in the flow */
+        transform: none; /* Remove any transforms for better stacking */
+    }
+
+    .background {
+        width: 200%;
+        transform: translateX(-5%) translateY(-310%);
+    }
+
+    /* Adjust button positions and sizes */
+    .house, .house-hover, .projects, .projects-hover,
+    .arcade, .arcade-hover, .board, .board-hover,
+    .fountain {
+        position: relative; /* Make them flow naturally */
+        transform: none; /* Remove transform on smaller screens */
+        width: 90%; /* Adjust button size */
+        margin: 10px 0; /* Space between buttons */
+        margin-top: 50px;
+    }
+    
+    /* Specific image scaling for mobile */
+    .grass {
+        position: relative;
+        transform: none;
+        width: 100%;
+        margin: 10px 0;
+    }
+}
